@@ -12,7 +12,9 @@
         <?php
            $x = 12;
            $y = 13;
-           echo "Zawsze jem $x i $y jak jestem hungary"
+           $z = "kaszanke";
+           echo "Zawsze jem $z i $y jak jestem hungary <br>";
+           echo $z;
         ?>
     </body>
 </html>
