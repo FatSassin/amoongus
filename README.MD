@@ -1,1 +1,1 @@
-Read My Ass
+"Prometheus was punished by the gods by giving the gift of knowledge to man. He was cast into the bowels of the earth and pecked by birds."
