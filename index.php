@@ -5,47 +5,26 @@
 		<meta charset="utf-8">
     </head>
     <body>
-        <h1>LOGIN</h1>
-        <form action="index.php" method="post">
-            <label>Username</label><br>
-            <input type="text" name="username">
-            <br>
-            <label>Email</label><br>
-            <input type="text" name="email">
-            <br>
-            <label>Password</label><br>
-            <input type="password" name="password">
-            <br>
-            <input type="submit">
-        </form>
-        <br>
         <h1>PIZZA ORDER</h1>
         <form action="index.php" method="get">
-            <label>Pizza type</label><br>
-            <input type="text" name="type">
-            <br>
-            <label>Pizza quantity</label><br>
-            <input type="number" name="amount">
-            <br>
-            <label>Special instructions</label><br>
-            <input type="text" name="special">
-            <br>
-            <label>Adress</label><br>
-            <input type="text" name="adres">
-            <br>
-            <input type="submit">
+            <select name="foods" id="foods">
+                <option value="5">Pizza z Ananasem</option>
+                <option value="2">Zimny Kot</option>
+                <option value="99">Dupalacze</option>
+                <option value="6">Czarne</option>
+            </select>
+            <input type="number" value="ile" name="liczba">
+            <input type="submit" value="yes" name="amoung">
         </form>
         <br>
     </body>
 </html>
 <?php
-    echo $_POST["username"] . "<br>";
-    echo $_POST["email"] . "<br>";
-    echo $_POST["password"]. "<br>";
-?>
-<?php
-    echo $_GET["type"]. "<br>";
-    echo $_GET["amount"]. "<br>";
-    echo $_GET["special"]. "<br>";
-    echo $_GET["adres"]. "<br>";
+    if (isset($_GET["foods"])) {
+        $liczba = (int)$_GET["liczba"];
+        $foods = (int)$_GET["foods"];
+        $total = ($foods * $liczba);
+        echo "cena wynosi {$total} pln";
+        
+    }
 ?>
