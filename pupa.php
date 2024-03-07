@@ -4,7 +4,16 @@
         <title>Bolyston Club</title>
 		<meta charset="utf-8">
     </head>
-    <body>
+    <body> 
+        
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <br>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <br>
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+        <!--
         <form method="post">
             <input type='number' name="liczba" value="liczba1" />
             <input type='number' name="2liczba" value="liczba2" />
@@ -12,7 +21,17 @@
             <input type='number' name="4liczba" value="liczba4" />
             <input type="submit" name="go" value="Submit" />
         </form>
+        -->
         <?php 
+            $dir    = 'uploads/';
+            $files1 = scandir($dir);
+            $files2 = scandir($dir, SCANDIR_SORT_DESCENDING);
+            for($i = 2; $i<sizeof($files1); $i++)
+            {
+                echo "<img src='uploads/$files1[$i]' alt='ass' style='height: 100px; width:100px;'> <br>";
+                //echo file_get_contents("uploads/$files1[$i]");
+            }
+
             /* 
               $a = $_POST['liczba'];
               $b = $_POST['2liczba'];
@@ -93,6 +112,7 @@
             }
             */
 
+            /*
             $a = $_POST['liczba'];
             $b = $_POST['2liczba'];
             $c = $_POST['3liczba'];
@@ -108,7 +128,7 @@
             else {
                 echo "nie ma najwiekszej lcizby";
             }
-
+            */
 
 
         ?>
